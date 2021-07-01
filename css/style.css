@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+
+
+body {
+    font-family:"Merriweather Sans",sans-serif;
+    color: #670b53;;
+
+}
+
+.wrapper {
+    max-width:  1080px;
+    height: 700px;
+    /* background-color: #fff0fb; */
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:0 auto;
+    padding: 40px;
+
+}
+
+.title {
+    max-width: 500px;
+    font-size :45px;
+    font-weight:bold;
+}   
+
+
+.restart{
+    width: 175px;
+    height: 50px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    border-radius: 50px;
+    border:2px solid #670b53;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.restart:hover{
+    background:#670b53;
+    color:white;
+    
+}
+
+.right_section {
+    padding-left: 15px;
+}
+
+.game{    
+    display:flex;
+    flex-direction: column;
+    width: 450px;
+    height: 450px;
+}
+
+
+.game_header{
+    display:flex; 
+    color: black;
+    font-size: 24px;
+}
+
+.game_header .player-x{
+    flex: 1;
+    border-bottom: 3px solid rgb(155, 124, 124);
+    padding-bottom: 9px;
+    
+}
+.game_header .player-o{
+    flex: 1;
+    border-bottom: 3px solid rgb(155, 124, 124);
+    padding-bottom: 9px;
+}
+
+.player-x.active{
+    color: aqua;
+    border-color:  aqua;
+}
+.player-o.active{   
+    color: rgb(214, 118, 214);
+    border-color: rgb(214, 118, 214);
+    
+
+}
+
+.tile-x{
+    color:aqua;
+}
+.tile-o{
+    color: rgb(214, 118, 214);
+}
+.tile-winner span{
+    color: rgb(12, 124, 72);
+
+}
+.board{
+    display:grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    flex-grow: 1;
+    padding: 10px;
+    /* background-color:#fff0fb; */
+}
+
+.board-tile{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 100px;
+    background:white;
+    /* border:2px solid;  */
+
+}
+
+.board-tile:not(:nth-child(3n)){
+    border-right:2px solid  rgb(169, 17, 196) ;
+}
+
+.board-tile:not(:nth-child(n+7) ){
+    border-bottom:2px solid rgb(169, 17, 196) ;
+}
+/* .board-tile:not(:nth-last-child(-n+3) ){
+    border-bottom:2px solid rgb(169, 17, 196) ;
+} */
+
+
+.board-tile:hover{
+    background : rgb(214, 213, 213) ;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:700px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .left {
+        margin-bottom: 50px;
+    }
+}
