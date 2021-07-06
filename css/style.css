@@ -12,7 +12,7 @@ body {
 
 .wrapper {
     max-width:  1080px;
-    height: 700px;
+    height: 750px;
     /* background-color: #fff0fb; */
     display: flex;
     align-items:center;
@@ -54,8 +54,8 @@ body {
 .game{    
     display:flex;
     flex-direction: column;
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
 }
 
 
@@ -141,5 +141,15 @@ body {
     }
     .left {
         margin-bottom: 50px;
+    }
+    .game{    
+        display:flex;
+        flex-direction: column;
+        width: 320px;
+        height: 350px;
+
+    }
+    .board-tile{
+        font-size: 88px;
     }
 }
