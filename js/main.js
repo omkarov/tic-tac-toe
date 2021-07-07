@@ -32,3 +32,30 @@ function onRestartClick(){
 
 }
 gameView.updateBoard(game);
+
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+var bt= document.querySelectorAll(".board-tile");
+
+// document.querySelector(".theme").addEventListener("click", ()=>{
+
+const themeSwitch = document.querySelector('input');
+
+themeSwitch.addEventListener('change', () => {
+      document.body.classList.toggle('dark-theme');
+
+    if (prefersDarkScheme.matches){
+        document.body.classList.toggle("light-theme");
+        document.querySelector(".wrapper").classList.toggle("dark-theme");
+        document.querySelector(".board").classList.toggle("dark-theme");
+        for(let i=0; i<bt.length;i++){
+            bt[i].classList.toggle("dark-theme");
+        }
+        document.querySelector(".restart").classList.toggle("dark-theme");
+        document.querySelector(".title").classList.toggle("dark-theme");
+        
+        
+    }else{
+        document.body.classList.toggle("dark-theme");
+    }
+
+});

@@ -13,7 +13,7 @@ body {
 .wrapper {
     max-width:  1080px;
     height: 750px;
-    /* background-color: #fff0fb; */
+    /* background-color: #353233; */
     display: flex;
     align-items:center;
     justify-content:space-between;
@@ -42,9 +42,15 @@ body {
     margin-top: 30px;
 }
 .restart:hover{
-    background:#670b53;
+    background:#d181c0;
     color:white;
     
+}
+
+.left_section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .right_section {
@@ -54,6 +60,7 @@ body {
 .game{    
     display:flex;
     flex-direction: column;
+    /* background-color: #353233; */
     width: 500px;
     height: 500px;
 }
@@ -61,25 +68,25 @@ body {
 
 .game_header{
     display:flex; 
-    color: black;
+    color: rgb(100, 100, 100);
     font-size: 24px;
 }
 
 .game_header .player-x{
     flex: 1;
-    border-bottom: 3px solid rgb(155, 124, 124);
+    border-bottom: 3px solid rgb(90, 90, 89);
     padding-bottom: 9px;
     
 }
 .game_header .player-o{
     flex: 1;
-    border-bottom: 3px solid rgb(155, 124, 124);
+    border-bottom: 3px solid rgb(90, 90, 90);
     padding-bottom: 9px;
 }
 
 .player-x.active{
-    color: aqua;
-    border-color:  aqua;
+    color: rgb(187, 147, 60);
+    border-color: rgb(187, 147, 60);
 }
 .player-o.active{   
     color: rgb(214, 118, 214);
@@ -89,13 +96,13 @@ body {
 }
 
 .tile-x{
-    color:aqua;
+    color:rgb(187, 147, 60);
 }
 .tile-o{
     color: rgb(214, 118, 214);
 }
 .tile-winner span{
-    color: rgb(12, 124, 72);
+    color: rgb(69, 223, 151);
 
 }
 .board{
@@ -113,7 +120,9 @@ body {
     justify-content: center;
     align-items:center;
     font-size: 100px;
-    background:white;
+    /* background-color: #353233; */
+    /* background:white; */
+
     /* border:2px solid;  */
 
 }
@@ -135,6 +144,9 @@ body {
     cursor: pointer;
 }
 
+
+
+
 @media only screen and (max-width:700px){
     .wrapper{
         flex-direction: column;
@@ -153,3 +165,159 @@ body {
         font-size: 88px;
     }
 }
+
+/* dark to light themes */
+body{
+    background-color: white;
+}
+
+body.dark-theme{
+    background-color:#353233;
+}
+.wrapper{
+    background-color: white; 
+}
+.wrapper.dark-themew{
+    background-color: #353233; 
+}
+
+.board-tile{
+    background-color: white; 
+}
+.board-tile.dark-theme{
+    background-color: white; 
+}
+/* .board{
+    background-color: white;
+} */
+
+
+@media (prefers-color-scheme: dark) {   
+    .wrapper ,.board-tile{
+        background-color: #353233; 
+    }
+    .board{
+        background-color: #353233;
+    }
+    .title{
+        color: rgb(223, 238, 230);
+    }
+    
+    body{
+        background-color: #353233;
+    }
+    /* toggle */
+    body.light-theme{
+        background-color:white;
+    }
+    .wrapper{
+        background-color: #353233; 
+    }
+    .wrapper.dark-theme{
+        background-color: white; 
+    }
+    .board-tile{
+        background-color: #353233; 
+    }
+    .board-tile.dark-theme{
+        background-color: white; 
+    }
+    .board{
+        background-color: #353233;
+    }
+    .board.dark-theme{
+        background-color: white;
+    }
+    .restart{
+        border:2px solid white;
+        color:white;
+        }
+    .restart.dark-theme{
+        border:2px solid #670b53;
+        color:black;
+    }
+    .title{
+        color: rgb(223, 238, 230);
+    }
+    .title.dark-theme{
+        color: rgb(57, 58, 57);
+    }
+
+
+}
+
+@media (prefers-color-scheme: light) {   
+    .wrapper{
+        background-color: white; 
+    }
+    
+    .board-tile{
+        background-color: white; 
+    }
+
+    .title{
+        color: rgb(57, 58, 57);
+    }
+
+    .restart{
+        border:2px solid #670b53;
+        color:black;
+    }
+    body{
+        background-color: white;
+    }
+    
+}
+
+
+.theme{
+    padding-bottom: 1px;
+
+
+}
+.theme:hover{
+    cursor: pointer;
+    color:white;
+}
+
+  
+  .switch {
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .switch div {
+    position: relative;
+    display: block;
+    background: #eee;
+    width: 30px;
+    border-radius: 50px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  
+  .fa-adjust {
+    transform: rotate(180deg);
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .slider {
+    background-color: #999;
+    transition: 0.4s;
+    border-radius: 34px;
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  input:checked + .slider {
+    transform: translateX(8px);
+  }
+  
