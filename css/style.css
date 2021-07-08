@@ -24,7 +24,7 @@ body {
 
 .title {
     max-width: 500px;
-    font-size :45px;
+    font-size :35px;
     font-weight:bold;
 }   
 
@@ -49,10 +49,12 @@ body {
 
 .left_section{
     display: flex;
-    align-items: center;
+    align-items: left;
     flex-direction: column;
 }
-
+.theme{
+    padding-top: 10px;
+}
 .right_section {
     padding-left: 15px;
 }
