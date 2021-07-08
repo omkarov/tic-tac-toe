@@ -41,7 +41,7 @@ var bt= document.querySelectorAll(".board-tile");
 const themeSwitch = document.querySelector('input');
 
 themeSwitch.addEventListener('change', () => {
-      document.body.classList.toggle('dark-theme');
+    //   document.body.classList.toggle('dark-theme');
 
     if (prefersDarkScheme.matches){
         document.body.classList.toggle("light-theme");
@@ -56,6 +56,17 @@ themeSwitch.addEventListener('change', () => {
         
     }else{
         document.body.classList.toggle("dark-theme");
+        document.querySelector(".wrapper").classList.toggle("dark-theme");
+        document.querySelector(".board").classList.toggle("dark-theme");
+        for(let i=0; i<bt.length;i++){
+            bt[i].classList.toggle("dark-theme");
+        }
+        
+        document.querySelector(".restart").classList.toggle("dark-theme");
+        document.querySelector(".title").classList.toggle("dark-theme");
+        
+
+
     }
 
 });

@@ -266,6 +266,39 @@ body.dark-theme{
     body{
         background-color: white;
     }
+    .wrapper{
+        background-color: white; 
+    }
+    .wrapper.dark-theme{
+        background-color: #353233; 
+    }
+    
+    .board-tile{
+        background-color: white; 
+    }
+    .board-tile.dark-theme{
+        background-color: #353233; 
+    }
+    .board{
+        background-color: white;
+    }
+    .board.dark-theme{
+        background-color: #353233;
+    }
+    .restart{
+        border:2px solid #670b53;
+        color:black;
+    }
+    .restart.dark-theme{
+        border:2px solid white;
+        color:white;
+    }
+    .title{
+        color: rgb(57, 58, 57);
+    }
+    .title.dark-theme{
+        color: rgb(223, 238, 230);
+    }
     
 }
 
