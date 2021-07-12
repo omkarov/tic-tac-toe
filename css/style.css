@@ -28,7 +28,6 @@ body {
     font-weight:bold;
 }   
 
-
 .restart{
     width: 175px;
     height: 50px;
@@ -44,6 +43,8 @@ body {
 .restart:hover{
     background:#d181c0;
     color:white;
+    transform:scale(1.075);
+
     
 }
 
@@ -55,6 +56,10 @@ body {
 .theme{
     padding-top: 10px;
 }
+.theme:hover{
+    transform:scale(1.075);
+}
+
 .right_section {
     padding-left: 15px;
 }
