@@ -7,7 +7,7 @@ class GameView{
     updateBoard(game){
         this.updateTurn(game);
         const Winnerstatus= game.checkWin();
-
+        
         for(let i = 0; i < game.board.length;i++ ){
             const tile = document.querySelector(`.board-tile[data-index= '${i}'] `);
             tile.textContent= game.board[i];
@@ -20,6 +20,9 @@ class GameView{
                 tile.classList.add("tile-winner");
             }
         }
+
+        if(Winnerstatus && !game.StopGameFlag)
+            this.updateScoreView(game);
     }
 
     updateTurn(game){
@@ -36,6 +39,25 @@ class GameView{
             playerO.classList.add('active');
 
         }
+    }
+
+    updateScoreView(game,isResetScore){
+        if(game.turn =='X'){
+            game.updateScore()
+            console.log(game.playerXScore);   
+            document.getElementById("score-x-display").textContent = game.playerXScore; 
+        }
+        else {
+            game.updateScore()
+            console.log(game.player0Score);   
+            document.getElementById("score-o-display").textContent = game.player0Score; 
+        }
+        
+        if(isResetScore){
+            document.getElementById("score-x-display").textContent = game.playerXScore; 
+            document.getElementById("score-o-display").textContent = game.player0Score; 
+        }
+
     }
 
 }

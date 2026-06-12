@@ -4,16 +4,21 @@ class Game{
     constructor(){
         this.turn = "X";
         this.board = new Array(9).fill(null);
+        this.playerXScore = 0
+        this.player0Score = 0
+        this.StopGameFlag = false
         // console.log(this.board);
-
+        console.log("playerXScore:- ",this.playerXScore);
+        console.log("player0Score:- ",this.player0Score);
+        console.log("StopGameFlag:- ",this.StopGameFlag);
     }
+
     nextTurn(){
         if(this.turn == "X"){
             this.turn="O";
         }else{
             this.turn = "X"
         }
-    
     }
 
     makeMove(i){
@@ -23,12 +28,11 @@ class Game{
 
         if(this.board[i]!="X" && this.board[i]!="O" ){
             this.board[i] = this.turn;
-            let winstatus= this.checkWin();
+            let winstatus = this.checkWin();
             if(!winstatus){
                 this.nextTurn();
             }
         }
-
     }
 
     checkWin(){
@@ -60,18 +64,23 @@ class Game{
 
     }
 
-
-
-
     StopGame(){
         let winstatus= this.checkWin();
         if(winstatus){
+            this.StopGameFlag = true;
             return true;
-            
         }
         else{
+            this.StopGameFlag = false;
             return false;
         }
+    }
+
+    updateScore(){
+        if(this.turn == "X" && this.StopGame())
+            this.playerXScore +=1;
+        if(this.turn == "O" && this.StopGame())
+            this.player0Score +=1;
     }
 
     // newGame(){
@@ -81,10 +90,5 @@ class Game{
 
 
 }
-
-
-
-
-
 
 export default Game; 
